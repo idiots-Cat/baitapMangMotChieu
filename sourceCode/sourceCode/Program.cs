@@ -134,5 +134,53 @@ namespace tinhSoLeCuaMang
 
 Console.Write("-----------------------------------------------------------------------------------");
 
+// tim x trong mang
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace FindX
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap n: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"nhap a[{i}]: ");
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write("Nhap x: ");
+            int x = int.Parse(Console.ReadLine());
+            int timX = findX(array, x);
+            if (timX == -1)
+            {
+                Console.WriteLine($"{x} khong ton tai trong mang!");
+
+            }
+            else
+                Console.WriteLine($"{x} tim thay tai vi tri {timX}");
+            Console.ReadKey();
+        }
+        static int findX(int[] array, int x)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == x)
+                    return i;
+            }
+            return -1;
+        }
+    }
+}
+
+Console.Write("---------------------------------------------------------------------------");
+
 
 
